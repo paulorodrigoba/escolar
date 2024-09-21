@@ -1,5 +1,7 @@
 package br.com.cetam.escolar.api.domain.professor;
 
+import br.com.cetam.escolar.api.domain.endereco.DadosEndereco;
+
 import java.time.LocalDate;
 
 public record DadosCadastroProfessor(
@@ -9,7 +11,9 @@ public record DadosCadastroProfessor(
         String sexo,
         LocalDate admissao,
         int cargaHoraria,
-        String telefone
+        String telefone,
+        DadosEndereco endereco
+
 
 
 ) {

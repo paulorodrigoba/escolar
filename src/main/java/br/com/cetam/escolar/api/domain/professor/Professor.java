@@ -1,5 +1,6 @@
 package br.com.cetam.escolar.api.domain.professor;
 
+import br.com.cetam.escolar.api.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -22,6 +23,9 @@ public class Professor {
     private int cargaHoraria;
     private Boolean ativo;
 
+    @Embedded
+    private Endereco endereco;
+
     public Professor(){}
 
     public Professor (DadosCadastroProfessor dados){
@@ -33,5 +37,7 @@ public class Professor {
         this.telefone = dados.telefone();
         this.admissao = dados.admissao();
         this.cargaHoraria = dados.cargaHoraria();
+        this.endereco = new Endereco(dados.endereco());
+
     }
 }
